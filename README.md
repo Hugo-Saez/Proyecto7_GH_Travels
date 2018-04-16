@@ -1,4 +1,4 @@
 # Proyecto7_GH_Travels
 
-npm install
+npm install</br>
 bower install
