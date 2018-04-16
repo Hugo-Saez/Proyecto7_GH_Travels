@@ -1,0 +1,114 @@
+<section id="users-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 offset-1 admin-margin">
+                <div class="table-responsive">
+                    <a class="btn btn-primary" href="/admin/destinos">Destinos</a>
+                    <table class="table table-sm tablaDestinos">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Admin</th>
+                            <th scope="col">Activo</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#if usuarios.length}}
+                            {{#each usuarios}}
+                                <tr>
+                                    <th scope="row">{{id}}</th>
+                                    <td>{{usuario}}</td>
+                                    <td>{{email}}</td>
+                                    <td>{{password}}</td>
+                                    <td><input type="checkbox" {{#if admin}} checked  {{/if}}></td>
+                                    <td><input type="checkbox" {{#if activo}} checked  {{/if}}></td>
+                                    <td><!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUser{{id}}">
+                                            Editar
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modalUser{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Editar usuario</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" id="pills-admin-tab" data-toggle="pill" href="#pills-admin{{id}}" role="tab" aria-controls="pills-admin" aria-selected="true">Admin</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="pills-activo-tab" data-toggle="pill" href="#pills-activo{{id}}" role="tab" aria-controls="pills-activo" aria-selected="false">Estado</a>
+                                                            </li>
+                                                        </ul>
+                                                        <form action="/admin/usuarios" method="post">
+                                                            <div class="tab-content" id="pills-tabContent">
+                                                                <div class="tab-pane fade show active" id="pills-admin{{id}}" role="tabpanel" aria-labelledby="pills-admin-tab">
+                                                                    <div class="radio">
+                                                                        <label>
+                                                                            <input type="radio" name="admin" id="opciones_1" value="1" {{#if admin}}checked{{/if}}>
+                                                                            Si
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio">
+                                                                        <label>
+                                                                            <input type="radio" name="admin" id="opciones_2" value="0" {{#unless admin}}checked{{/unless}}>
+                                                                            No
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="pills-activo{{id}}" role="tabpanel" aria-labelledby="pills-activo-tab">
+                                                                    <div class="radio">
+                                                                        <label>
+                                                                            <input type="radio" name="activo" id="opciones_1" value="1" {{#if activo}}checked{{/if}}>
+                                                                            Activado
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="radio">
+                                                                        <label>
+                                                                            <input type="radio" name="activo" id="opciones_2" value="0" {{#unless activo}}checked{{/unless}}>
+                                                                            Desactivado
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="hidden" name="id" value="{{id}}" >
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                                <button type="submit" class="btn btn-primary" id="submitEdit">Guardar cambios</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <form action="/admin/recuperarpassword/{{password}}" method="get">
+                                            <button type="submit" class="btn btn-warning">
+                                                Enviar Email
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                        {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

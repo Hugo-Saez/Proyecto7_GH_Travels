@@ -1,0 +1,94 @@
+<section id="admin-info">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 offset-1 admin-margin">
+                <div class="table-responsive">
+                    <a class="btn btn-primary" href="/admin/usuarios">Usuarios</a>
+                    <table class="table table-sm tablaDestinos">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Viaje</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">F.Salida</th>
+                        <th scope="col">F.Vuelta</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Activo</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#if destinos.length}}
+                        {{#each destinos}}
+                            <tr>
+                                <th scope="row">{{id}}</th>
+                                <td>{{viaje}}</td>
+                                <td>{{precio}} €</td>
+                                <td>{{fecha_sal}}</td>
+                                <td>{{fecha_vuel}}</td>
+                                <td>{{descripcion}}</td>
+                                <td>{{imagen}}</td>
+                                <td>
+                                    <input type="checkbox" onclick='window.location.assign("/admin/destinos/active/{{id}}")'  id="customCheck1" {{#if activo}} checked  {{/if}}>
+                                </td>
+                                <td><button type="button"  onclick='window.location.assign("/admin/destinos/delete/{{id}}")' class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                            </tr>
+                        {{/each}}
+                    {{/if}}
+                    </tbody>
+                </table>
+
+                    <div class="nvoDestino">
+                        <div class="d-flex justify-content-center">
+                            <button id="altaDest" type="button" class="btn btn-outline-primary">Alta</button>
+                        </div>
+                        <div id="formCrearDest" style="display: none" class="addDest">
+                            <form action="/admin/destinos/create" method="post" enctype="multipart/form-data">
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="viaje" placeholder="Viaje" required>
+                                    </div>
+                                    <div class="col">
+                                        <select id="inputState" class="form-control" name="activo">
+                                            <option selected>Activo</option>
+                                            <option value="0">No</option>
+                                            <option value="1">Si</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="fecha_sal" placeholder="Fecha ida" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="fecha_vuel" placeholder="Fecha vuelta" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="precio" placeholder="precio" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="file" class="form-control" name="imagen" placeholder="imagen" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="descripcion" placeholder="descripcion" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Añadir</button>
+                                        <button id="nvoDestClose" type="button" class="btn btn-outline-danger"><i class="fas fa-times-circle"></i> Cerrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

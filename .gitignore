@@ -1,0 +1,9 @@
+.idea
+node_modules
+.vagrant
+/config/emailData.js
+ubuntu-xenial-16.04-cloudimg-console.log
+/logs/app.log
+package-lock.json
+/public/components
+

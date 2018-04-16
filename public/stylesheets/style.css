@@ -1,0 +1,579 @@
+.container-fluid{
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+
+.row{
+  margin-right: 0!important;
+}
+
+.logReg1{
+  display: none;
+}
+
+.logReg2 ul{
+  list-style-type: none;
+}
+
+.logReg2 ul li{
+  margin-bottom: 3%;
+}
+
+.logReg2 ul li a {
+  color: white!important;
+  text-shadow: 1px 1px 1px black;
+}
+
+.logReg2 ul li a:hover{
+  color: yellow!important;
+}
+#navbarTogglerDemo02{
+  justify-content: center;
+}
+
+.navbar-collapse .navbar-nav li a{
+  color: white!important;
+  text-shadow: 1px 1px 1px black;
+}
+
+/*Mouse encima*/
+.navbar-collapse .navbar-nav li a:hover{
+  color: yellow!important;
+}
+
+nav.navbar {
+    background-color: rgba(240,240,240,0.7);
+}
+
+#menu img{
+  max-width: 7em;
+}
+
+#textMenu{
+  text-align: center;
+}
+
+#redesSocial ul{
+  list-style-type: none;
+}
+
+#redesSocial ul li{
+  float: left;
+  margin-right: 0.5em;
+}
+
+#carouselExampleIndicators {
+  max-height: 100vh;
+}
+
+.carousel-inner{
+  height: 100%;
+}
+#carousel1{
+  background-image: url("../images/invierno.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 3em;
+  height: 100%;
+}
+#carousel2{
+  background-image: url("../images/otonyo.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 3em;
+  height: 100%;
+}
+#carousel3{
+  background-image: url("../images/verano.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 3em;
+  height: 100%;
+}
+
+.viaja{
+  font-size: 6em;
+  color: #ffffff;
+  margin-top: 10%;
+}
+.viaja h1,h3{
+  text-shadow: 1px 1px 1px black;
+}
+.viaja a{
+  margin-left: 25%;
+}
+/* MENU - INICIO */
+
+.boton-registro{
+  margin-left: 0.3em;
+}
+/* MENU - FIN  */
+
+/*DESTINOS - INICIO */
+
+
+.contenedor-destinos .row{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+#destinos,#destinos-moviles{
+  min-height: 25em;
+  background: #e2e1e0;
+}
+
+.ultimahora{
+  margin-left: 3%;
+  margin-bottom: 0px !important;
+  padding-top: 3%;
+  font-weight: bolder;
+  color: darkslategrey;
+  font-size: x-large;
+
+}
+.fila-destinos{
+  padding: 2%;
+}
+.fila-destinos a{
+  text-decoration: none;
+}
+.destino{
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.destino h4{
+  font-size: 18px;
+  color:#46403c;
+  margin:0px !important;
+  padding: 10px 10px 0px 10px;
+}
+
+.p-1{
+  padding: 0px !important;
+}
+
+.destino strong{
+  color:#d03505;
+  font-size: 14px;
+  padding: 10px 0px 0px 10px;
+}
+
+.destino .descripcion{
+  color: grey;
+  font-size: 12px;
+  padding: 10px 0px 0px 10px;
+}
+
+.destino .reservar{
+  display: inherit;
+}
+
+.destino .precio{
+  color:grey;
+}
+
+.destino .precio strong{
+  font-weight: bolder;
+  font-size: 30px;
+  color: black;
+  padding: 0px 0px 0px 0px !important;
+  margin-right: 1em;
+}
+
+.destino-malta{
+  background: url("../images/malta.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino-london{
+  background: url("../images/london.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino-dublin{
+  background: url("../images/dublin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino-paris{
+  background: url("../images/paris.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino-amsterdam{
+  background: url("../images/amsterdam.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino-rome{
+  background: url("../images/roma.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width:100%;
+  height: 12em;
+}
+
+.destino:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.fila-disponibilidad{
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+}
+
+.form-control{
+  min-height: 45px;
+  font-size: large !important;
+}
+
+.botones-disponibilidad{
+  text-align: right;
+}
+
+.card-imp-top {
+  height: 250px;
+}
+
+/*DESTINOS - FIN */
+
+/* CSS para apartado SOMOS */
+
+#somos{
+  width: auto;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/somos.jpg");
+}
+#quienes_somos{
+  background-color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 40px;
+  padding: 2%;
+  border: 1px solid #0D3349;
+  border-radius: 10px;
+}
+
+hr{
+  width:73%;
+  margin-left: 0px;
+  position: relative;
+  border-color: yellow;
+  margin-top: -4px;
+}
+
+#quienes_somos:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* CSS - FIN */
+
+/* Apartado MAPA*/
+
+.formulario{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.mapa:hover, .formulario:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.wrapper-contacto {
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+}
+
+.form-contact .row{
+  margin-bottom: 2%;
+}
+
+.hr-contact {
+  border-style: inset;
+  border-width: 3px;
+  border-color: yellow;
+}
+
+.submit{
+  margin-top: 2%;
+}
+
+/* FIN apartado MAPA */
+
+/* FOOTER */
+
+footer{
+  color: #fff;
+  background: #0D3349;
+  padding-top: 2%;
+  text-align: center;
+}
+
+#informacion{
+  text-align: left;
+}
+#informacion h5{
+  text-align: center;
+}
+#informacion ul{
+  list-style-type: none;
+}
+#informacion ul li{
+  display: block;
+}
+#informacion ul li a{
+  color:#fff;
+  padding: 0!important;
+}
+#redesSocial2{
+  text-align: center;
+  border-top: 1px solid yellow;
+  display: none;
+}
+#pie{
+  border-top: 1px solid yellow;
+  padding-top: 2vh;
+}
+
+/* FIN FOOT */
+
+/* CSS Login */
+
+.boton-home{
+  margin-right: 0.3em;
+}
+
+#login{
+  background-image: url("../images/invierno.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 3em;
+  height: 100vh;
+}
+.cont-login{
+  padding: 5vh;
+  margin-top: 20vh;
+  background-color: #00091a;
+  opacity:0.8;
+  background-size:cover;
+  text-align: center;
+}
+.cont-login h2{
+  text-align: center;
+  color: #fff;
+}
+.cont-login a.remenberlink{
+  color: #fff;
+  text-decoration: none;
+}
+.btn-link{
+    color: #fff;
+}
+
+/* FIN Login */
+
+/* CSS Registro */
+
+#registro{
+  background-image: url("../images/invierno.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 3em;
+  height: 100vh;
+}
+.cont-reg{
+  padding: 5vh;
+  margin-top: 20vh;
+  background-color: #00091a;
+  opacity:0.8;
+  background-size:cover;
+  text-align: center;
+}
+.cont-reg h2{
+  color: #fff;
+}
+.cont-reg a.loginlink{
+  color: #fff;
+  text-decoration: none;
+}
+.cont-reg label{
+  color: #fff;
+}
+
+/* FIN Registro */
+
+/* pagina 404*/
+
+.fondo404{
+  background-image: url("../images/otonyo.jpg");
+  background-position: center center;
+  background-size: cover;
+  padding:10em;
+  height: 100vh;
+}
+
+.texto404{
+  padding-top: 20vh;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  background-color: #00091a;
+  opacity:0.8;
+}
+
+/*fin 404*/
+/* mensaje de login correcto*/
+
+.bienvenido{
+  text-align: center;
+  margin-top: 1px;
+  margin-right: 20vh;
+  margin-left: 20vh;
+}
+
+
+/* Cambios en Tablet*/
+
+@media screen and (max-width: 785px) {
+
+  #menu{
+    background-color: #00091a;
+    opacity:0.8;
+    /*max-height:100px ;*/
+    background-size:cover;
+    z-index: 1;
+  }
+
+  .logReg1{
+    display: initial;
+  }
+  .logReg2{
+    display: none;
+  }
+
+  #navbarTogglerDemo02{
+    text-align: right;
+    padding-top: 2%;
+    width:auto;
+  }
+
+  .boton-login{
+    margin-top: 0.5em;
+  }
+
+  .boton-registro{
+    margin-top: 0.5em;
+  }
+  #informacion{
+    display: none;
+  }
+  #redesSocial{
+    display: none;
+  }
+
+  #redesSocial2{
+    display: initial;
+  }
+  #redesSocial2 .row .col-12{
+    padding-left: 25vw;
+  }
+
+  #redesSocial2 ul{
+    list-style-type: none;
+  }
+
+  #redesSocial2 ul li{
+    float: left;
+    margin-right: 0.5em;
+  }
+
+
+
+  /*DESTINOS - INICIO */
+
+  .columna-proximo,.columna-ultimahora{
+    margin-top: 1em;
+  }
+  .fila-destinos .col-12,.col-sm-12{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  /* DESTINOS - FIN */
+  .mapa{
+    margin-bottom: 2vh;
+  }
+  .formulario{
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+
+}
+
+/*--------------------------*/
+/*Cambios en MOVIL*/
+
+@media screen and (max-width: 700px) {
+
+  .wrapper-contacto{
+    display: none;
+  }
+
+  #somos{
+    background-color: blue;
+  }
+  .viaja{
+    color: #ffffff;
+    margin-top: 25%;
+    margin-left: 15%;
+  }
+  .informacion{
+    display: none;
+  }
+  #ayuda, #newsletter{
+    padding-left: 8%;
+  }
+  #ayuda h5, #newsletter h5{
+    text-decoration: underline #ffff00;
+  }
+  #redesSocial2 .row .col-12{
+    padding-left: 5vw;
+  }
+}
+
+/*ADMINVIEW - INICIO*/
+.admin-margin{
+  margin-top: 6em;
+}
+
+/*ADMINVIEW - FIN*/

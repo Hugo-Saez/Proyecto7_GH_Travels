@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{title}}</title>
+      <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+  </head>
+  <body>
+    {{>header}}
+    {{{body}}}
+    {{#if footerShow}}
+        {{>footer}}
+    {{/if}}
+
+    <script type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
+    <script type="text/javascript" src="/javascripts/login.js"></script>
+    <script type="text/javascript" src="/javascripts/registro.js"></script>
+    <!-- Llamamos el script de encriptación MD5 desde la página de Paul Johnston -->
+    <script src="http://pajhome.org.uk/crypt/md5/2.2/md5-min.js"></script>
+
+  </body>
+</html>

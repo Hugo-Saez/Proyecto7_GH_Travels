@@ -1,0 +1,58 @@
+<section id="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 col-md-8 offset-md-2 cont-login">
+                <h2>Iniciar Sesión</h2>
+                <form action="/login" method="post" class="formLog" onsubmit="localStor()">
+                    <div class="form-row justify-content-md-center">
+                        <div class="form-group col-md-6 col-8">
+                            <input type="text" class="form-control" id="inputUssuario" name="usuario" placeholder="Usuario" required>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-md-center">
+                        <div class="form-group col-md-6">
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-md-center">
+                        <div class="form-group col-md-6">
+                            <button type="submit" class="btn btn-warning btn-lg" id="submitLogin">Identificarse</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">¿ No recuerdas tu contraseña ?</button>
+                    {{#if correcto}}
+                        <p class="alert alert-info">Se ha registrado correctamente! Ya puedes iniciar sesion.</p>
+                    {{/if}}
+                    {{#if errorLogin}}
+                        <p class="alert alert-danger">Usuario o Email erroneos</p>
+                    {{/if}}
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Recuperar contraseña</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" action="/recuperarpassword">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="email" class="form-control" id="recipient-name" placeholder="Introduce tu email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
