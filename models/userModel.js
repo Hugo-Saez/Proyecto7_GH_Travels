@@ -50,6 +50,7 @@ userModel.login = function(usuario,cb) {
               usuario: result[0].usuario,
               admin: result[0].admin
             };
+            console.log("Devuelve base datos"+JSON.stringify(userData));
             return cb(null,userData);
         } else {
             return cb(null,null);
@@ -88,5 +89,24 @@ userModel.editPassword = function(usuario,cb){
        return cb(null, result)
     });
 };
+
+//Sistema de paginación
+userModel.paginate =(offset, limit, cb)=>{
+    if(conn) {
+        conn.query("SELECT * FROM  usuarios LIMIT ?, ?", [offset, limit],(error,rows)=>{
+            if(error){
+                return cb(error);
+            }else{
+                conn.query("SELECT COUNT(*) as total FROM usuarios",(error, count)=>{
+                    if(error) {
+                        return cb(error)
+                    }else{
+                        return cb(null,{count,rows});
+                    }
+                })
+            }
+        })
+    }
+}
 
 module.exports = userModel;

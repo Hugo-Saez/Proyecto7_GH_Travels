@@ -4,40 +4,48 @@ var Email = require('../config/emailConfig');
 var destinosModel=require('../models/destinosModel');
 var userModel=require('../models/userModel');
 var upload = require('../config/multer');
+const paginate = require('express-paginate');
 
-// const Multer = require('multer');
-//
-// const storage = Multer.diskStorage({
-//     destination: function (req, file, cb){
-//         cb(null,"uploads/");
-//     },
-//     filename: function(req, file, cb) {
-//         cb(null, file.originalname);
-//     }
-// });
-//
-// const upload = Multer({storage: storage});
 
 router.get('/', function(req, res, next) {
   res.status(200).json(req.session || "Sesión no disponible");
 });
 
+
 router.get('/destinos', function(req, res, next) {
-    destinosModel.fetchAll((error,destinos)=>{
-        if(error) return res.status(500).json(error);
+    console.log("Entra en admin destinos");
+    let page=(parseInt(req.query.page) || 1) -1;
+    let limit = 1;
+    let offset = page * limit ;
+
+    destinosModel.paginate(offset, limit, (error, destinos)=>{
+        console.log(JSON.stringify(destinos));
+        if(error){
+            console.log('Error ->'+ error);
+            return res.status(500).send(error);
+        }
+
         if(req.session.admin==1){
+            const currentPage = offset ===0 ? 1:(offset/limit)+1;
+            const totalCount = destinos.count[0].total;
+            const pageCount = Math.ceil(totalCount /limit);
+            const pagination = paginate.getArrayPages(req)(10,pageCount, currentPage);
+
             res.render('adminview',{
                 title:"Gestión de destinos",
                 layout:"layout",
                 admin: req.session.admin,
                 usuario: req.session.usuario,
-                destinos: destinos
+                destinos: destinos.rows,
+                currentPage,
+                links: pagination,
+                hasNext: paginate.hasNextPages(pageCount),
+                pageCount
             })
         }
         else{
             res.redirect('/');
         }
-
     })
 });
 
@@ -78,7 +86,7 @@ router.post('/destinos/create', upload.single('imagen'), function (req,res,next)
     })
 });
 
-router.get('/usuarios', function(req, res, next) {
+/*router.get('/usuarios', function(req, res, next) {
     //console.log(req.body);
     userModel.fetchAll((error,usuarios)=>{
         if(error) return res.status(500).json(error);
@@ -95,11 +103,40 @@ router.get('/usuarios', function(req, res, next) {
             res.redirect('/');
         }
     })
+});*/
+
+router.get('/usuarios', function(req, res, next) {
+    let page=(parseInt(req.query.page) || 1) -1;
+    let limit = 1;
+    let offset = page * limit ;
+
+    userModel.paginate(offset, limit, (error,usuarios)=>{
+        if(error) return res.status(500).json(error);
+        if(req.session.admin==1){
+            const currentPage = offset ===0 ? 1:(offset/limit)+1;
+            const totalCount = usuarios.count[0].total;
+            const pageCount = Math.ceil(totalCount /limit);
+            const pagination = paginate.getArrayPages(req)(10,pageCount, currentPage);
+
+            res.render('usersview',{
+                title:"Gestión de usuarios",
+                layout:"layout",
+                admin: req.session.admin,
+                usuario: req.session.usuario,
+                usuarios: usuarios.rows,
+                currentPage,
+                links: pagination,
+                hasNext: paginate.hasNextPages(pageCount),
+                pageCount
+            })
+        }
+        else{
+            res.redirect('/');
+        }
+    })
 });
 
 router.post('/usuarios', function(req, res, next) {
-    // console.log(req.body);
-    //res.send(req.body);
     let usuario={
         admin:req.body.admin,
         activo:req.body.activo,

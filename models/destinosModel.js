@@ -67,4 +67,23 @@ Destinos.destinoCreate=(destino,cb)=>{
     }
 }
 
+//Sistema de paginación
+Destinos.paginate =(offset, limit, cb)=>{
+    if(conn) {
+        conn.query("SELECT * FROM  destinos LIMIT ?, ?", [offset, limit],(error,rows)=>{
+            if(error){
+                return cb(error);
+            }else{
+                conn.query("SELECT COUNT(*) as total FROM destinos",(error, count)=>{
+                    if(error) {
+                        return cb(error)
+                    }else{
+                        return cb(null,{count,rows});
+                    }
+                })
+            }
+        })
+    }
+}
+
 module.exports=Destinos;

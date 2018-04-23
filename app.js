@@ -6,11 +6,16 @@ var logger = require('morgan');
 var session = require('express-session');
 var flash= require('connect-flash');
 var winston= require('./config/winston');
-
+var pagination = require('./routes/admin');
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
+const carrito = require('./routes/carrito');
+var paginate = require('express-paginate');
 
 var app = express();
+
+//Utilización de middleware
+app.use(paginate.middleware(2,20));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +27,7 @@ hbs.registerPartials(`${__dirname}/views/partials`);
 // Actualize la pag automaticamente sin apagar el server
 var hbsUtils=require('hbs-utils')(hbs);
 hbsUtils.registerWatchedPartials(`${__dirname}/views/partials`);
+require('./helpers/hbs')(hbs);
 
 // Cookie
 app.use(session({
@@ -48,6 +54,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+app.use('/carrito', carrito);
+//app.use('/pagination',pagination);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -67,5 +75,7 @@ app.use(function(err, req, res, next) {
         layout:'layout'
       });
 });
+
+
 
 module.exports = app;

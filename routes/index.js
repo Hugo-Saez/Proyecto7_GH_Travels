@@ -20,6 +20,7 @@ router.get('/',(req,res,next)=> {
 });
 
 router.get('/login', function(req, res, next) {
+    console.log("Entra en login");
     res.render('login',
         {
             title: 'Iniciar Sesion',
@@ -35,7 +36,8 @@ router.get('/registro', function(req, res, next) {
         });
 });
 
-router.post('/login', function (req,res) {
+router.post('/login', function (req,res, next) {
+    console.log("entra en login " + JSON.stringify(req.body));
     let Usuario = {
         usuario: req.body.usuario,
         password: req.body.password

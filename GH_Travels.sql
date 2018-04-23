@@ -27,6 +27,6 @@ create table destinos (
 );
 
 INSERT INTO destinos (viaje, precio, descripcion, fecha_sal, fecha_vuel, imagen, activo)
-VALUES ("Malta preciosa", 450, "Una de las mejores playas del Mediterraneo, Malta, en pensión completa con vuelos incluídos", "15-Abril", "25-Abril", "malta.jpg",1),
-("Hamburgo cultural", 650, "Una ciudad con personalidad propia en media pensión con vuelos incluídos", "25-Abril", "30-Abril", "hamburg.jpg",1),
-("Maldivas maravillosas", 940, "Paraiso sin igual de playas y naturaleza en estado puro, en pensión completa con vuelos incluídos", "19-Abril", "3-Mayo", "azores.jpg",1);
+VALUES ("Malta preciosa", 450, "Una de las mejores playas del Mediterraneo, Malta, en pensión completa con vuelos incluídos", "15-Abril", "25-Abril", "/uploads/malta.jpg",1),
+("Hamburgo cultural", 650, "Una ciudad con personalidad propia en media pensión con vuelos incluídos", "25-Abril", "30-Abril", "/uploads/hamburg.jpg",1),
+("Maldivas maravillosas", 940, "Paraiso sin igual de playas y naturaleza en estado puro, en pensión completa con vuelos incluídos", "19-Abril", "3-Mayo", "/uploads/azores.jpg",1);

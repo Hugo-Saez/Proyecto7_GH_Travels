@@ -32,7 +32,7 @@
 }
 
 .navbar-collapse .navbar-nav li a{
-  color: white!important;
+  color: black!important;
   text-shadow: 1px 1px 1px black;
 }
 
@@ -105,6 +105,9 @@ nav.navbar {
 /* MENU - INICIO */
 
 .boton-registro{
+  margin-left: 0.3em;
+}
+.boton-carrito{
   margin-left: 0.3em;
 }
 /* MENU - FIN  */
@@ -259,6 +262,11 @@ nav.navbar {
 
 .card-imp-top {
   height: 250px;
+}
+
+.margen-destino{
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /*DESTINOS - FIN */
@@ -454,10 +462,10 @@ footer{
 /* mensaje de login correcto*/
 
 .bienvenido{
-  text-align: center;
-  margin-top: 1px;
-  margin-right: 20vh;
-  margin-left: 20vh;
+  text-align: right;
+  text-shadow: 1px 1px 1px black;
+  margin-top: 0.2em;
+  margin-right: -1em;
 }
 
 
@@ -493,6 +501,11 @@ footer{
   .boton-registro{
     margin-top: 0.5em;
   }
+
+  .boton-carrito{
+    margin-top: 0.5em;
+  }
+
   #informacion{
     display: none;
   }
@@ -577,3 +590,16 @@ footer{
 }
 
 /*ADMINVIEW - FIN*/
+
+
+/*USERSVIEW - INICIO*/
+
+.btn-ttc,
+.btn-ttc:hover,
+.btn-ttc:active {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5356c1;
+}
+
+/*USERSVIEW - FIN*/

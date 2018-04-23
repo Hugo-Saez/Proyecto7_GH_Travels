@@ -1,6 +1,3 @@
-{{#if logeado}}
-    <p class="alert alert-info bienvenido">Bienvenido a GeeksHubs Travels {{usuario}}</p>
-{{/if}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="false">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -50,8 +47,8 @@
             <div class="row fila-destinos d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex">
                 {{#if destinos.length}}
                     {{#each destinos}}
-                        <div class="col-d-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 tarj">
-                            <div class="card destino" style="width: 22rem">
+                        <div class="margen-destino col-d-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 tarj">
+                            <div class="card destino">
                                 <img class="card-imp-top" src="{{imagen}}" title="{{imagen}}"></img>
                                 <div class="card-body">
                                     <h4>{{viaje}}</h4>

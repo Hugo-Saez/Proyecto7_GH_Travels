@@ -1,0 +1,53 @@
+<section id="carrito">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 offset-1 admin-margin">
+                <div class="table-responsive">
+                    <table class="table table-sm tablaDestinos">
+                        <thead>
+                        <tr>
+                            <th scope="col">Viaje</th>
+                            <th scope="col">F.Salida</th>
+                            <th scope="col">F.Vuelta</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#if destinos.length}}
+                            {{#each destinos}}
+                                <tr>
+                                    <td>{{viaje}}</td>
+                                    <td>{{fecha_sal}}</td>
+                                    <td>{{fecha_vuel}}</td>
+                                    <td>{{descripcion}}</td>
+                                    <td><img src="{{imagen}}" width="60" height="40"></td>
+                                    <td>{{precio}} €</td>
+                                    <td><div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Botón desplegable
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">1</a>
+                                            <a class="dropdown-item" href="#">2</a>
+                                            <a class="dropdown-item" href="#">3</a>
+                                            <a class="dropdown-item" href="#">4</a>
+                                            <a class="dropdown-item" href="#">5</a>
+                                        </div>
+                                    </div>
+                                    <td>Total</td>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                        {{/if}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

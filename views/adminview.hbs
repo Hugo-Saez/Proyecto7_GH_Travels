@@ -28,7 +28,7 @@
                                 <td>{{fecha_sal}}</td>
                                 <td>{{fecha_vuel}}</td>
                                 <td>{{descripcion}}</td>
-                                <td>{{imagen}}</td>
+                                <td><img src="{{imagen}}" width="60" height="40"></td>
                                 <td>
                                     <input type="checkbox" onclick='window.location.assign("/admin/destinos/active/{{id}}")'  id="customCheck1" {{#if activo}} checked  {{/if}}>
                                 </td>
@@ -38,7 +38,35 @@
                     {{/if}}
                     </tbody>
                 </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
 
+                            <!-- anterior enlace -->
+                            {{#with paginate}}
+                                {{#if hasPreviousPages}}<!--res.locals.hasPreviousPages-->
+                                    <li class="page-item prev">
+                                        <a class="page-link" href="{{prev_link this}}">Anterior</a>
+                                    </li>
+                                {{/if}}
+                            {{/with}}
+
+                            <!-- del 1 al n -->
+                            {{#each links}}
+                                <li class="page-item {{is_active @index ../currentPage }}"><!-- custom helper -->
+                                    <a class="page-link" href="{{url}}">{{number}}</a>
+                                </li>
+                            {{/each}}
+
+                            <!-- siguiente enlace -->
+                            {{#with paginate}}
+                                {{#has_next_links ../pageCount this}}
+                                    <li class="page-item next">
+                                        <a class="page-link" href="{{next_link ../this}}">Siguiente</a>
+                                    </li>
+                                {{/has_next_links}}
+                            {{/with}}
+                        </ul>
+                    </nav>
                     <div class="nvoDestino">
                         <div class="d-flex justify-content-center">
                             <button id="altaDest" type="button" class="btn btn-outline-primary">Alta</button>

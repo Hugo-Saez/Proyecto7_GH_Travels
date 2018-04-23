@@ -28,8 +28,8 @@
                                     <td><input type="checkbox" {{#if admin}} checked  {{/if}}></td>
                                     <td><input type="checkbox" {{#if activo}} checked  {{/if}}></td>
                                     <td><!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUser{{id}}">
-                                            Editar
+                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalUser{{id}}">
+                                            <i class="fas fa-pencil-alt"></i>
                                         </button>
 
                                         <!-- Modal -->
@@ -97,8 +97,8 @@
                                     </td>
                                     <td>
                                         <form action="/admin/recuperarpassword/{{password}}" method="get">
-                                            <button type="submit" class="btn btn-warning">
-                                                Enviar Email
+                                            <button type="submit" class="btn btn-ttc">
+                                                <i class="far fa-envelope"></i>
                                             </button>
                                         </form>
                                     </td>
@@ -107,6 +107,35 @@
                         {{/if}}
                         </tbody>
                     </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+
+                            <!-- anterior enlace -->
+                            {{#with paginate}}
+                                {{#if hasPreviousPages}}<!--res.locals.hasPreviousPages-->
+                                    <li class="page-item prev">
+                                        <a class="page-link" href="{{prev_link this}}">Anterior</a>
+                                    </li>
+                                {{/if}}
+                            {{/with}}
+
+                            <!-- del 1 al n -->
+                            {{#each links}}
+                                <li class="page-item {{is_active @index ../currentPage }}"><!-- custom helper -->
+                                    <a class="page-link" href="{{url}}">{{number}}</a>
+                                </li>
+                            {{/each}}
+
+                            <!-- siguiente enlace -->
+                            {{#with paginate}}
+                                {{#has_next_links ../pageCount this}}
+                                    <li class="page-item next">
+                                        <a class="page-link" href="{{next_link ../this}}">Siguiente</a>
+                                    </li>
+                                {{/has_next_links}}
+                            {{/with}}
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
